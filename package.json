@@ -1,0 +1,24 @@
+{
+  "name": "production-portal",
+  "version": "1.0.0",
+  "description": "Technical assignment for QA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biljanakostovska/production-portal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/biljanakostovska/production-portal/issues"
+  },
+  "homepage": "https://github.com/biljanakostovska/production-portal#readme",
+  "devDependencies": {
+    "cypress": "^15.10.0"
+  }
+}
