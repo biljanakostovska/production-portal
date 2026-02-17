@@ -1,4 +1,18 @@
+/// <reference types="cypress" />
+import type {} from 'cypress'
+
 const PRODUCTION_PORTAL = 'https://productionportal.master.mediagenix.io'
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      login(): Chainable<void>
+      goToConfigurations(): Chainable<void>
+      goToTemplates(): Chainable<void>
+      clickCreateTemplate(): Chainable<void>
+    }
+  }
+}
 
 Cypress.Commands.add('login', () => {
   cy.visit('https://accounts.master.mediagenix.io/login')
@@ -14,7 +28,7 @@ Cypress.Commands.add('login', () => {
 
 Cypress.Commands.add('goToConfigurations', () => {
   cy.origin(PRODUCTION_PORTAL, () => {
-    Cypress.on('uncaught:exception', (err) => {
+    Cypress.on('uncaught:exception', (err: Error) => {
       if (
         err.message.includes('predefinedFunctions') ||
         err.message.includes('predefinedAttachments')
@@ -30,7 +44,7 @@ Cypress.Commands.add('goToConfigurations', () => {
 
 Cypress.Commands.add('goToTemplates', () => {
   cy.origin(PRODUCTION_PORTAL, () => {
-    Cypress.on('uncaught:exception', (err) => {
+    Cypress.on('uncaught:exception', (err: Error) => {
       if (
         err.message.includes('predefinedFunctions') ||
         err.message.includes('predefinedAttachments')
@@ -46,7 +60,7 @@ Cypress.Commands.add('goToTemplates', () => {
 
 Cypress.Commands.add('clickCreateTemplate', () => {
   cy.origin(PRODUCTION_PORTAL, () => {
-    Cypress.on('uncaught:exception', (err) => {
+    Cypress.on('uncaught:exception', (err: Error) => {
       if (
         err.message.includes('predefinedFunctions') ||
         err.message.includes('predefinedAttachments')
@@ -59,3 +73,5 @@ Cypress.Commands.add('clickCreateTemplate', () => {
       .click()
   })
 })
+
+export {}

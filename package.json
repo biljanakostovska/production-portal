@@ -4,9 +4,9 @@
   "description": "Technical assignment for QA",
   "main": "index.js",
   "scripts": {
-  "cypress:open": "cypress open",
-  "cypress:run": "cypress run"
-  },  
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/biljanakostovska/production-portal.git"
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/biljanakostovska/production-portal#readme",
   "devDependencies": {
-    "cypress": "^15.10.0"
+    "@types/cypress": "^0.1.6",
+    "cypress": "^15.10.0",
+    "typescript": "^5.9.3"
   }
 }

@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 const PRODUCTION_PORTAL = 'https://productionportal.master.mediagenix.io'
 
 describe('Templates management', () => {
@@ -8,12 +10,12 @@ describe('Templates management', () => {
     cy.goToTemplates()
   })
 
-  it('User can create and save a template', () => {
-    const templateName = `Test template ${Date.now()}`
+  it('Create a new template', () => {
+    const templateName: string = `New template ${Date.now()}`
 
     cy.clickCreateTemplate()
 
-    cy.origin(PRODUCTION_PORTAL, { args: { templateName } }, ({ templateName }) => {
+    cy.origin(PRODUCTION_PORTAL, { args: { templateName } }, ({ templateName }: { templateName: string }) => {
       Cypress.on('uncaught:exception', () => false)
 
       cy.get('input[data-testing-name="templates-name-form-input"]')
