@@ -20,8 +20,15 @@
   },
   "homepage": "https://github.com/biljanakostovska/production-portal#readme",
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
     "@types/cypress": "^0.1.6",
     "cypress": "^15.10.0",
+    "esbuild": "^0.27.3",
     "typescript": "^5.9.3"
+  },
+  "cypress-cucumber-preprocessor": {
+  "nonGlobalStepDefinitions": false,
+  "stepDefinitions": "cypress/e2e/step-definitions/**/*.ts"
   }
 }
