@@ -11,14 +11,17 @@ This repository contains end-to-end test for **Creating templates** in Productio
 ```
 cypress/
 ├── e2e/
-│   ├── templates.feature            # Gherkin feature file
-│   └── step-definitions/
-│       └── create-template.ts       # Step definitions for templates feature
+│   ├── step-definitions/
+│   │   └── create-template.ts       # Step definitions for templates feature
+│   └── create-template.feature      # Gherkin feature file
 ├── support/
 │   ├── commands.ts                  # Custom Cypress commands
 │   └── e2e.ts                       # Global support file (imported automatically)
 cypress.config.ts                    # Cypress configuration
 tsconfig.json                        # TypeScript configuration
+.gitignore                           # Git ignore rules
+cypress.env.json                     # Environment variables (do NOT commit)
+package.json                         # Project dependencies
 ```
 
 ---
